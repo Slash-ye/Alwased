@@ -1,0 +1,240 @@
+﻿@model FullyProject.Models.CarOffer
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_DashLayout.cshtml";
+}
+
+
+
+<div class="app-content content container-fluid">
+    <div class="content-wrapper">
+        <div class="content-header row">
+            <div class="content-header-left col-md-6 col-xs-12 mb-1">
+                <h2 class="content-header-title">السيارات</h2>
+            </div>
+            <div class="content-header-right breadcrumbs-right breadcrumbs-top col-md-6 col-xs-12">
+                <div class="breadcrumb-wrapper col-xs-12">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="~/Dashboard/Index">الصفحة الرئيسية</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="#">السيارات</a>
+                        </li>
+                        <li class="breadcrumb-item active">
+                            <a href="~/CarOffers/Create">اضافة سياره</a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="content-body">
+            <!-- Basic form layout section start -->
+            <section id="basic-form-layouts">
+                <div class="row match-height">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title" id="basic-layout-form">اضافة سياره</h4>
+                                <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+                                <div class="heading-elements">
+                                    <ul class="list-inline mb-0">
+                                        <li><a data-action="collapse"><i class="icon-minus4"></i></a></li>
+                                        <li><a data-action="reload"><i class="icon-reload"></i></a></li>
+                                        <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                            <script>
+                                function Reset()
+                                {
+                                    document.getElementById("showCar").value =
+                                    document.getElementById("ModelsCar").value =
+                                    document.getElementById("Cartype").value =
+                                    document.getElementById("price").value =
+                                    document.getElementById("typeofprice").value =
+                                    document.getElementById("numbercomm").value =
+                                    document.getElementById("Descrption").value ='';
+                                }
+                            </script>
+                            <div class="card-body collapse in">
+                                <div class="card-block">
+
+                                    @using (Html.BeginForm("Create", "CarOffers", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                                    {
+                                        @Html.AntiForgeryToken()
+                                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                        <div class="form-body" id="form">
+                                            <h4 class="form-section">السيارات</h4>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        @Html.LabelFor(model => model.offerTitle, htmlAttributes: new { @class = "control-label " })
+
+
+                                                        @Html.EditorFor(model => model.offerTitle, new { htmlAttributes = new { @class = "form-control", id = "showCar", placeholder = "عنوان العرض", name = "fname" } })
+                                                        @Html.ValidationMessageFor(model => model.offerTitle, "", new { @class = "text-danger" })
+
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        @Html.LabelFor(model => model.carModel, htmlAttributes: new { @class = "control-label " })
+
+                                                        @Html.EditorFor(model => model.carModel, new { htmlAttributes = new { @class = "form-control", id = "ModelsCar", name = "interested" } })
+                                                        @Html.ValidationMessageFor(model => model.carModel, "", new { @class = "text-danger" })
+
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        @Html.LabelFor(model => model.carType, htmlAttributes: new { @class = "control-label " })
+
+                                                        @Html.EditorFor(model => model.carType, new
+                                                   {
+                                                       htmlAttributes = new { @class = "form-control", id = "Cartype", name = "interested" }
+                                                   })
+                                                        @Html.ValidationMessageFor(model => model.carType, "", new { @class = "text-danger" })
+
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        @Html.LabelFor(model => model.price, htmlAttributes: new { @class = "control-label " })
+
+                                                        @Html.EditorFor(model => model.price, new { htmlAttributes = new { @class = "form-control", type = "text", id = "price", placeholder = "السعر", name = "fname" } })
+                                                        @Html.ValidationMessageFor(model => model.price, "", new { @class = "text-danger" })
+
+
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        @Html.LabelFor(model => model.currencyId, htmlAttributes: new { @class = "control-label " })
+
+                                                        @Html.DropDownList("currencyTypeId", null, "اختر نوع العمله", htmlAttributes: new { @class = "form-control", id = "pricetype", name = "interested" })
+
+                                                        @Html.ValidationMessageFor(model => model.currencyId, "", new { @class = "text-danger" })
+                                                    </div>
+
+                                                        </div>
+                                                       
+
+
+                                                    </div>
+                                               
+                                            
+
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        @Html.LabelFor(model => model.phoneNumber, htmlAttributes: new { @class = "control-label " })
+
+                                                        @Html.EditorFor(model => model.phoneNumber, new
+                                                   {
+                                                       htmlAttributes = new { @class = "form-control", id = "numbercomm", placeholder = "رقم التواصل", name = "fname" }
+                                                   })
+                                                        @Html.ValidationMessageFor(model => model.phoneNumber, "", new { @class = "text-danger" })
+
+
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+
+                                                    <div class="form-group">
+                                                        @Html.LabelFor(model => model.publish, htmlAttributes: new { @class = "control-label " })
+                                                        <div class="checkbox">
+                                                            @Html.EditorFor(model => model.publish)
+                                                            @Html.ValidationMessageFor(model => model.publish, "", new { @class = "text-danger" })
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+
+                                                <div class="col-md-6">
+                                                    <h4 class="form-section">الصورة الرئيسية</h4>
+                                                    <div class="form-group">
+                                                        <label>اختيار الصورة</label>
+                                                        <label id="projectinput7" class="file center-block">
+                                                            <input type="file" id="file" name="photo" />
+                                                            <span class="file-custom"></span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <h4 class="form-section">الصور الفرعية</h4>
+                                                    <label>اختيار الصورة</label>
+                                                    <label id="projectinput7" class="file center-block">
+                                                        <input type="file" id="file" name="photos" multiple />
+                                                        <span class="file-custom"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <h4 class="form-section">
+                                                        @Html.LabelFor(model => model.description, htmlAttributes: new { @class = "control-label " })
+                                                </h4>
+
+                                                <div class="form-group">
+
+                                                    @Html.TextAreaFor(model => model.description, new { htmlAttributes = new { @class = "form-control", id = "Descrption", rows = "5", name = "comment", placeholder = "الوصف" } })
+                                                    @Html.ValidationMessageFor(model => model.description, "", new { @class = "text-danger" })
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-actions">
+                                            <button onclick="Reset()" type="button"  class="btn btn-warning  float-lg-right">
+                                                <i class="icon-cross2"></i> الغاء
+                                            </button>
+                                            <button type="submit" class="btn btn-primary mr-1 float-lg-right">
+                                                <i class="icon-check2"></i> حفظ
+                                            </button>
+                                        </div>
+
+                                    </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+                    </section>
+            <!-- // Basic form layout section end -->
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<div>
+
+
+    @Html.ActionLink("القائمه", "Index")
+</div>

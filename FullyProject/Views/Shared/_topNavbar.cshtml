@@ -1,0 +1,79 @@
+﻿@using Microsoft.AspNet.Identity
+<nav class="header-navbar navbar navbar-with-menu navbar-fixed-top navbar-semi-dark navbar-shadow">
+    <div class="navbar-wrapper">
+        <!--
+
+            this div the logo of web
+            done by F8
+
+        -->
+        <div class="navbar-header">
+            <ul class="nav navbar-nav">
+                <li class="nav-item mobile-menu hidden-md-up float-xs-left">
+                    <a class="nav-link nav-menu-main menu-toggle hidden-xs">
+                        <i class="icon-menu5 font-large-1"></i>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#" class="navbar-brand nav-link">
+                        <img alt="branding logo" src="../../assets/images/logo/big-loge.png"
+                             data-expand="../../assets/images/logo/big-loge.png"
+                             data-collapse="../../assets/images/logo/loge-smail.png"
+                             class="brand-logo">
+                    </a>
+                </li>
+
+                <li class="nav-item hidden-md-up float-xs-right">
+                    <a data-toggle="collapse" data-target="#navbar-mobile"
+                       class="nav-link open-navbar-container">
+                        <i class="icon-ellipsis pe-2x icon-icon-rotate-right-right">
+                        </i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+
+
+        <div class="navbar-container content container-fluid">
+            <div id="navbar-mobile" class="collapse navbar-toggleable-sm">
+
+                <ul class="nav navbar-nav">
+                    <li class="nav-item hidden-sm-down">
+                        <a class="nav-link nav-menu-main menu-toggle hidden-xs">
+                            <i class="icon-menu5"></i>
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav float-xs-right">
+                    <li class="dropdown dropdown-user nav-item">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle nav-link dropdown-user-link">
+                            <span class="avatar avatar-online">
+                                <img src="../../assets/images/portrait/small/avatar-s-1.png" alt="avatar">
+                                <span class="user-name"> @User.Identity.GetUserName()
+                               </span>
+                            </span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                           
+                                @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                                {
+                                    @Html.AntiForgeryToken()
+                                    <a href="javascript:document.getElementById('logoutForm').submit()">تسجيل الخروج</a>
+
+                                }
+                            <span class="user-name"> @User.Identity.GetUserName()</span>
+                        </div>
+                        </li>
+                        <!--
+        end of  profile in the web
+         done by F8
+         -->
+</ul>
+            </div>
+        </div>
+    </div>
+</nav>
+

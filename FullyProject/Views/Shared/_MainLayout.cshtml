@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <title>الوسيط</title>
+    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/mainAssets/css")
+</head>
+<body>
+
+    <!--============ Start Upper Bar ============-->
+    <div class="upper-bar">
+        <div class="container">
+            <div class="row">
+                <div class="info col-sm text-center text-sm-right">
+                </div>
+                <div class="info inf col-sm text-center text-sm-left">
+                    <p> <i class="fa fa-envelope"></i> alwaseeet.ye@gmail.com </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--============ End Upper Bar ============-->
+    <!--============ Start Navbar ============-->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <span></span>
+                <img src="/mainAssets/images/logge.png" alt="xv">
+            </a>
+            <button class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#main-nav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="main-nav">
+
+                <ul class="navbar-nav ml-auto ">
+                    <li class="nav-item active">
+                        <a class="nav-link " href="~/Home/">الصفحه الرئيسية <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="~/Home/AllProperty">عقارات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/Home/NewProject">مشاريع جديدة</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/Home/AllCar">سيارات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/Home/Contact">تواصل معنا</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="~/Home/About">عن الوسيط</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--============ End Navbar ============-->
+
+
+
+
+
+    @RenderBody()
+
+
+
+
+
+
+
+
+
+    <!--=========== Start Footer ==============-->
+
+    <footer>
+        <div class="container">
+            <div class="row ">
+                <div class="col-sm-4 text-center">
+                    <img style=" width: 70%;" src="~/mainAssets/images/logge.png" alt="">
+                    <h3> الوسيط للعقارات </h3>
+                </div>
+                <div class="col-sm-4">
+                    <div class="site-info">
+                        <h3>للتواصل</h3>
+                        <ul class="list-unstyled">
+                            <li><i class="fa fa-laptop"></i> صنعاء - شارع النصر </li>
+                            <li><i class="fa  fa-phone"></i> 01-333314</li>
+                            <li>
+                                <i class="fa fa-mobile-phone"></i> 775665666
+                            </li>
+                            <li>
+                                <i class="fa fa-mobile-phone "></i> 771000672
+                            </li>
+                            <li>
+                                <i class="fa  fa-mobile-phone  "></i> 777074444
+                            </li>
+                            <li><i class="fa fa-envelope"></i><a href="www.gmail.com"> alwaseeet.ye@gmail.com</a></li>
+                            <li>
+                                <ul style="padding:0" class="list-unstyled contactMedia">
+                                    <li style="margin:0">
+                                        <a><i class="fa fa-facebook-square"></i></a>
+                                    </li>
+                                    <li>
+                                        <a><i class="fa fa-twitter-square"></i></a>
+                                    </li>
+                                    <li>
+                                        <a><i class="fa fa-instagram"></i></a>
+                                    </li>
+                                    <li>
+                                        <a><i class="fa fa-google-plus"></i></a>
+                                    </li>
+                                    <li>
+                                        <a><i class="fa fa-linkedin"></i></a>
+                                    </li>
+                                </ul>
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <div class="contact">
+                        <h3>انواع العقارات</h3>
+                        <ul class="list-unstyled">
+                            <li>عمارات</li>
+                            <li>شقق</li>
+                            <li>اراضي</li>
+                            <li></li>
+                            <li>سيارات</li>
+                            <li>اراضي</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </footer>
+    <!--=========== End Footer ==============-->
+
+    <div class="copyright" style="
+    background: #08526d">
+        <div class="container">
+            <div class="row">
+                <div class="col-md text-info text-left text-uppercase">
+                    <i class="fa fa-heart text-danger"></i> Design by <b>S/ash</b>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    @Scripts.Render("~/mainAssets/js")
+
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>
+

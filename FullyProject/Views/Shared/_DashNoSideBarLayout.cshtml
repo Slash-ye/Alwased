@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+
+    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/assets/css")
+
+</head>
+<body data-open="click" data-menu="vertical-menu" data-col="2-columns"
+      class="vertical-layout vertical-menu 2-columns  fixed-navbar">
+
+    @Html.Partial("_topNavbar")
+    
+
+
+
+
+
+    @RenderBody()
+
+    @Html.Partial("_footer")
+
+
+    @Scripts.Render("~/bundles/jquery")
+
+    @RenderSection("scripts", required: false)
+    @Scripts.Render("~/assets/js")
+</body>
+</html>

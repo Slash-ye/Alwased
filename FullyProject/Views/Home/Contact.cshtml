@@ -1,0 +1,124 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+
+
+
+<section class="contactUSBanner">
+    <div class="container">
+        <div class="row">
+            <div class="mt-auto mb-auto">
+                <h1>تواصل معنا</h1>
+                <p>من خلال هذا الفورم تستطيع التواصيل معا مكتب الوسيط</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+
+<section class="cont">
+    <div class="container contt">
+        <div class="row">
+            <div class="col-sm-8 continner">
+                <h2 class="text-capitalize mb-4">تواصل معنا</h2>
+                @using (Ajax.BeginForm("ContactMessage",new AjaxOptions() {
+                    InsertionMode = InsertionMode.Replace,
+                    UpdateTargetId = "form"
+                }))
+                {
+                    <div class="row" id="form">
+                        <div class="form-group col-sm-6">
+                            <input type="text" class="form-control" id="name" name="fullName" placeholder="الاسم الكامل" required>
+                            @Html.ValidationMessage("fullName")
+
+
+                        </div>
+
+                        <div class="form-group col-sm-6">
+                            <input type="text" class="form-control" id="subject" name="phoneNumber" placeholder="الهاتف" required>
+                            @Html.ValidationMessage("phoneNumber")
+
+
+                        </div>
+                        <div class="form-group col-sm-12">
+                            <input type="email" class="form-control" id="email"name="email"  placeholder="البريد الاكتروني" required>
+                            @Html.ValidationMessage("email")
+
+
+                         </div>
+                        <div class="form-group col-sm-12">
+                            <textarea class="form-control" rows="8" id="msg" name="message" placeholder="الرسالة" required></textarea>
+                            @Html.ValidationMessage("message")
+
+
+                         </div>
+
+                        <div class="col-12">
+                            <input type="submit"  class="btn btn-info btn-block" value="ارسال">
+                        </div>
+                    </div>
+                }
+               
+            </div>
+
+            <div class="col-sm-4 text-white contimg">
+                <h2 class="text-capitalize">للتواصل معنا</h2>
+                <br>
+                <ul class="list-unstyled contactInfo">
+                    <li>
+                        <a><i class="fa fa-phone"></i>&nbsp;<small>الهاتف</small></a>
+                    </li>
+                    <li>
+                        <a><i class="fa fa-envelope"></i>&nbsp;<small>البريد الاكتروني</small> </a>
+                    </li>
+                    <li>
+                        <a><i class="fa fa-map"></i>&nbsp;<small>العنوان </small></a>
+                    </li>
+                </ul>
+                <br>
+
+
+                <h2 class="text-dark">الوسيط في شبكة التواصل الاجتماعية</h2>
+                <ul class="list-unstyled contactMedia">
+                    <li>
+                        <a><i class="fa fa-facebook-square"></i></a>
+                    </li>
+                    <li>
+                        <a><i class="fa fa-twitter-square"></i></a>
+                    </li>
+                    <li>
+                        <a><i class="fa fa-instagram"></i></a>
+                    </li>
+                    <li>
+                        <a><i class="fa fa-google-plus"></i></a>
+                    </li>
+                    <li>
+                        <a><i class="fa fa-linkedin"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

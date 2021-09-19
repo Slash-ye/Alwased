@@ -1,0 +1,24 @@
+﻿
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+
+
+@using (Ajax.BeginForm("ContactMessage", new AjaxOptions()
+{
+    InsertionMode = InsertionMode.Replace,
+    UpdateTargetId = "dane"
+}))
+{
+    <div class="text-center" id="dane">
+
+        <input id="name" type="text" class="form-control" placeholder="الاسم" name="fullName" required><br>
+        @Html.ValidationMessage("fullName")
+         <input id="email" type="text" class="form-control" placeholder="الايميل" name="email" required><br>
+        @Html.ValidationMessage("email")
+        <input id="phone" type="text" class="form-control" placeholder="رقم الهاتف" name="phoneNumber" required><br>
+        @Html.ValidationMessage("phoneNumber")
+        <textarea id="desc" type="text" class="form-control" rows="6" placeholder="الوصف" name="message" required></textarea><br>
+        @Html.ValidationMessage("message")
+        <input type="submit" class="btn btn-primary btn-block" value="أرسال">
+    </div>
+}

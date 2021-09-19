@@ -1,0 +1,353 @@
+﻿@model IEnumerable<FullyProject.Models.PropertyOffer>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_DashNoSideBarLayout.cshtml";
+    var Pt = ViewBag.Pt;
+}
+
+<!--Start SideBar  -->
+
+
+<div data-scroll-to-active="true" class="main-menu menu-fixed menu-dark menu-accordion menu-shadow">
+
+    <!-- main menu header-->
+    <div class="main-menu-header">
+        <input type="hidden" />
+    </div>
+    <!-- / main menu header-->
+    <!-- main menu content-->
+    <div class="main-menu-content">
+
+        <ul id="main-menu-navigation" data-menu="menu-navigation" class="navigation navigation-main">
+
+            <li class=" nav-item">
+                <a href="~/Dashboard">
+                    <i class="icon-home3"></i>
+                    <span data-i18n="nav.dash.main" class="menu-title">لوحه التحكم</span>
+                </a>
+            </li>
+
+            <li class=" navigation-header">
+                <span data-i18n="nav.category.support">العقارات</span>
+                <i data-toggle="tooltip" data-placement="left" data-original-title="العقارات"
+                   class="icon-ellipsis icon-ellipsis"></i>
+            </li>
+            <li class=" nav-item">
+
+                <a href="~/PropertyOffers/Create">
+                    <i class="icon-file-add"></i>
+                    <span data-i18n="nav.menu_levels.main" class="menu-title">اضافة عقار</span>
+
+                </a>
+            </li>
+            <li class=" nav-item">
+                <a href="~/PropertyOffers/Index">
+                    <i class="icon-android-funnel"></i>
+
+                    <span data-i18n="nav.menu_levels.main" class="menu-title">
+                        عرض العقار
+                    </span>
+                </a>
+                
+
+
+                <ul class="menu-content">
+                    <li>
+                        <a href="~/PropertyOffers/Index" data-i18n="nav.menu_levels.second_level" class="menu-item">الكل</a>
+                    </li>
+                    @foreach (var a in Pt)
+                    {
+                        
+                            <li>
+                                <a href="~/PropertyOffers/Index/@a.Id" data-i18n="nav.menu_levels.second_level" class="menu-item">@a.TypeName</a>
+                            </li>
+                       
+                    }
+                   
+                </ul>
+
+
+            </li>
+
+            <li class=" navigation-header">
+                <span data-i18n="nav.category.support">مشاريع قيد العمل</span>
+                <i data-toggle="tooltip" data-placement="left" data-original-title="مشاريع قيد العمل"
+                   class="icon-ellipsis icon-ellipsis"></i>
+            </li>
+            <li class=" nav-item">
+                <a href="~/OnlineProjects/Create">
+                    <i class="icon-file-add"></i>
+                    <span data-i18n="nav.dash.main" class="menu-title">أَضافه مشروع</span>
+                </a>
+
+            </li>
+            <li class=" nav-item">
+                <a href="~/OnlineProjects/">
+                    <i class="icon-android-funnel"></i>
+                    <span data-i18n="nav.menu_levels.main" class="menu-title">عرض المشاريع</span>
+                </a>
+            </li>
+
+
+            <!--
+            this for cars
+
+                done by F8 -->
+
+            <li class=" navigation-header">
+                <span data-i18n="nav.category.support">سيارات</span>
+                <i data-toggle="tooltip" data-placement="left" data-original-title="سيارات" class="icon-ellipsis icon-ellipsis"></i>
+            </li>
+            <li class=" nav-item">
+                <a href="~/CarOffers/Create">
+                    <i class="icon-file-add"></i>
+                    <span data-i18n="nav.dash.main" class="menu-title">أَضافه سياره</span>
+                </a>
+
+            </li>
+
+            <li class=" nav-item">
+                <a href="~/CarOffers/">
+                    <i class="icon-car"></i>
+                    <span data-i18n="nav.dash.main" class="menu-title">عرض السيارات</span>
+                </a>
+            </li>
+
+            <!--
+               the user share in website
+              done by F8
+               -->
+
+            <br />
+            <br />
+            <li class=" nav-item">
+                <a href="~/ContactInfoMessage">
+                    <i class="icon-android-funnel"></i>
+                    <span data-i18n="nav.menu_levels.main" class="menu-title">اضافة خيارات</span>
+
+                </a>
+                <ul class="menu-content">
+                    <li>
+                        <a href="~/PropertyTypes/" data-i18n="nav.menu_levels.second_level" class="menu-item">اضافة نوع عقار</a>
+                        <a href="~/PropertyStates/" data-i18n="nav.menu_levels.second_level" class="menu-item">اضافة حالة عقار</a>
+                        <a href="~/CurrencyTypes/" data-i18n="nav.menu_levels.second_level" class="menu-item">اضافة  عمله</a>
+                        <a href="~/DistanceUnits/" data-i18n="nav.menu_levels.second_level" class="menu-item">اضافة وحدة مساحه</a>
+
+
+                    </li>
+
+                </ul>
+            </li>
+
+            <li class=" navigation-header">
+                <span data-i18n="nav.category.support">الخدمات</span>
+                <i data-toggle="tooltip" data-placement="left" data-original-title="مشاريع قيد العمل"
+                   class="icon-ellipsis icon-ellipsis"></i>
+            </li>
+            <li class=" nav-item">
+                <a href="~/Services/Create">
+                    <i class="icon-file-add"></i>
+                    <span data-i18n="nav.dash.main" class="menu-title">أَضافه خدمه</span>
+                </a>
+
+            </li>
+            <li class=" nav-item">
+                <a href="~/Services/">
+                    <i class="icon-android-funnel"></i>
+                    <span data-i18n="nav.menu_levels.main" class="menu-title">عرض الخدمات</span>
+                </a>
+            </li>
+
+            <li class=" navigation-header">
+                <span data-i18n="nav.category.support"></span>
+                <i data-toggle="tooltip" data-placement="left" data-original-title="" class="icon-ellipsis icon-ellipsis"></i>
+            </li>
+
+            <li class=" nav-item">
+                <a href="~/SubscriptionEmail">
+                    <i class="icon-newspaper"></i>
+                    <span data-i18n="nav.dash.main" class="menu-title">قائمه المشاركين في الاخيار</span>
+                </a>
+            </li>
+
+            <li class=" navigation-header">
+                <span data-i18n="nav.category.support"></span>
+                <i data-toggle="tooltip" data-placement="left" data-original-title=""
+                   class="icon-ellipsis icon-ellipsis"></i>
+            </li>
+
+
+
+            <li class=" nav-item">
+                <a href="~/ContactInfoMessage">
+                    <i class="icon-android-funnel"></i>
+                    <span data-i18n="nav.menu_levels.main" class="menu-title">الرسائل</span>
+                    <span class="tag tag tag-primary tag-pill float-xs-right mr-2">3</span>
+                </a>
+                <ul class="menu-content">
+                    <li>
+                        <a href="~/ContactInfoMessage/" data-i18n="nav.menu_levels.second_level" class="menu-item">الوارد</a>
+                    </li>
+                    
+                </ul>
+            </li>
+
+
+            <!--
+             setting the web site
+             done by F8
+            -->
+
+            <li class=" navigation-header">
+                <span data-i18n="nav.category.support">اعدادات الموقع</span><i data-toggle="tooltip" data-placement="right" data-original-title="Support" class="icon-ellipsis icon-ellipsis"></i>
+            </li>
+
+            <li class=" nav-item">
+                <a href="#">
+                    <i class="icon-android-funnel"></i>
+                    <span data-i18n="nav.menu_levels.main" class="menu-title">المسخدم</span>
+                </a>
+                <ul class="menu-content">
+                    <li>
+                        <a href="~/Account/Register" data-i18n="nav.menu_levels.second_level" class="menu-item">اضافه</a>
+                    </li>
+                    <li>
+                        <a href="~/Account/ShowUser" data-i18n="nav.menu_levels.second_level" class="menu-item">عرض</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <!-- /main menu content-->
+    <!-- main menu footer-->
+    <!-- include includes/menu-footer-->
+    <!-- main menu footer-->
+</div>
+
+
+
+<!-- End Side Bar  -->
+
+<div class="app-content content container-fluid">
+    <div class="content-wrapper">
+        <div class="content-header row">
+            <div class="content-header-left col-md-6 col-xs-12 mb-1">
+                <h2 class="content-header-title">العقارات</h2>
+            </div>
+            <div class="content-header-right breadcrumbs-right breadcrumbs-top col-md-6 col-xs-12">
+                <div class="breadcrumb-wrapper col-xs-12">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="~/Dashboard">الصفحة الرئيسية</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="#">القعارات</a>
+                        </li>
+                        <li class="breadcrumb-item active">
+                            <a href="#">عرض عقار</a>
+                        </li>
+                        <li class="breadcrumb-item active">
+                            @Html.ActionLink("أضافة عقار", "Create")
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="content-body">
+            <!-- Basic Tables start -->
+            <!-- Hoverable rows start -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">العقارات</h4>
+                            <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+                            <div class="heading-elements">
+                                <ul class="list-inline mb-0">
+                                    <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+
+                        <div class="card-body collapse in">
+                            <div class="row">
+                                @using (Html.BeginForm())
+                                {
+
+                                    <div class=" col-md-6">
+                                        <div class="form-group">
+                                            <label class="label-control">بحث بالكود</label>
+                                            <input type="text" class="form-control" name="searchString" />
+
+                                            <button type="submit" class="btn btn-primary mr-1 float-lg-right">
+                                                <i class="icon-search"></i>   بحث
+                                            </button>
+                                        </div>
+                                    </div>
+
+
+                                }
+                                <div class="col-md-6">
+                                    أجمالي العقارات:@ViewBag.propCount
+                                </div>
+                            </div>   
+                            <div class="table-responsive">
+                                <table class="table table-hover mb-0">
+                                    <thead>
+                                        <tr>
+                                            
+                                            <th>الكود</th>
+                                            <th>المدينه</th>
+
+                                            <th>العنوان</th>
+                                            
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+
+                                                
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.code)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.city)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.address)
+                                                </td>
+
+                                               
+                                                <td>
+                                                    <button type="button" class="btn mr-1  btn-outline-warning btn-sm">@Html.ActionLink("تعديل", "Edit", new { id = item.Id, })</button>
+
+                                                    <button type="button" class="btn mr-1  btn-outline-primary btn-sm">@Html.ActionLink("تفاصيل", "Details", new { id = item.Id })</button>
+                                                     <button type="button" class="btn mr-1  btn-outline-danger btn-sm">@Html.ActionLink("حذف", "Delete", new { id = item.Id })</button>
+
+                                                  
+                                                   
+                                                </td>
+                                                
+
+                                            </tr>
+                                        }
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Hoverable rows end -->
+        </div>
+    </div>
+</div>
+<!-- ////////////////////////////////////////////////////////////////////////////-->

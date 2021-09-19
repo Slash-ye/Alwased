@@ -1,0 +1,173 @@
+﻿@model FullyProject.Models.PropertyOffer
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_DashLayout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>PropertyOffer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CurrencyType.currencyName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CurrencyType.currencyName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DistanceUnit.unitName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DistanceUnit.unitName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PropertyType.TypeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PropertyType.TypeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PropertyState.StateName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PropertyState.StateName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.offerTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.offerTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.country)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.country)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.city)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.city)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.distance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.distance)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.addDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.addDate)
+        </dd>
+
+        
+
+        <dt>
+            @Html.DisplayNameFor(model => model.publish)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.publish)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.phoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.phoneNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.description)
+        </dd>
+
+       
+
+        <dt>
+            @Html.DisplayNameFor(model => model.bedroomNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.bedroomNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.bathroomNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.bathroomNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ManagerId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ManagerId)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

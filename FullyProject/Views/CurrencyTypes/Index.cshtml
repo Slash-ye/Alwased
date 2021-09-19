@@ -1,0 +1,135 @@
+﻿@model IEnumerable<FullyProject.Models.CurrencyType>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_DashLayout.cshtml";
+}
+<!--//////////////////////////////////////////////////-->
+<div class="app-content content container-fluid">
+    <div class="content-wrapper">
+        <div class="content-header row">
+            <div class="content-header-left col-md-6 col-xs-12 mb-1">
+                <h2 class="content-header-title">العقارات</h2>
+            </div>
+            <div class="content-header-right breadcrumbs-right breadcrumbs-top col-md-6 col-xs-12">
+                <div class="breadcrumb-wrapper col-xs-12">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="~/Dashboard">الصفحة الرئيسية</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="#">القعارات</a>
+                        </li>
+                        <li class="breadcrumb-item active">
+                            <a href="#">عرض عقار</a>
+                        </li>
+                        <li class="breadcrumb-item active">
+                            @Html.ActionLink("أضافة عقار", "Create")
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="content-body">
+            <!-- Basic Tables start -->
+            <!-- Hoverable rows start -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">العقارات</h4>
+                            <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+                            <div class="heading-elements">
+                                <ul class="list-inline mb-0">
+                                    <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!--/////////////////////////-->
+
+
+                        <div class="card-body collapse in">
+                            <div class="card-block">
+
+
+
+                                @using (Html.BeginForm("Create", "CurrencyTypes", FormMethod.Post))
+
+                                {
+                                    @Html.AntiForgeryToken()
+
+                                    <div class="form-body">
+
+                                        <h4 class="form-section">نوع العمله</h4>
+
+                                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+
+
+                                        <div class="form-group">
+                                            <label class="control-label">نوع العمله</label>
+                                            <input class="form-control" name="currencyName" placeholder="نوع العمله" />
+                                        </div>
+
+
+                                        <div class="form-group">
+
+                                            <input type="submit" value="أضافة" class="btn btn-default mr-1 float-lg-right" />
+
+                                        </div>
+
+                                    </div>
+                                }
+
+
+                            </div>
+                        </div>
+
+
+
+
+                        <!--/////////////////////////-->
+
+
+                        <div class="card-body collapse in">
+                            <div class="table-responsive">
+                                <table class="table table-hover mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th>نوع العملة</th>
+
+
+
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.currencyName)
+                                                </td>
+                                                <td>
+
+                                                    @Html.ActionLink("حذف", "Delete", new { id = item.Id })
+                                                </td>
+                                            </tr>
+                                        }
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Hoverable rows end -->
+        </div>
+    </div>
+</div>
+<!-- ////////////////////////////////////////////////////////////////////////////-->

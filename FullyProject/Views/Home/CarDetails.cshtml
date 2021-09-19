@@ -1,0 +1,83 @@
+﻿@model FullyProject.ModelView.CarDetailModelView
+
+@{
+    ViewBag.Title = "CarDetails";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <h3 class="lead pb-2">@Model.offerTitle   <span class="">@Model.code</span></h3>
+
+
+            <div id="product" class="owl-carousel owl-theme  owl-rtl">
+                <img id="minImg" data-hash="pro1" src="/Images/PropertyOfferImages/@Model.mainImage" class="item">
+                @for (int i = 0; i < Model.photos.Count; i++)
+                {
+
+                    string id = "pro" + i;
+                    <img data-hash=@id src="/Images/PropertyOfferImages/@Model.photos[i].path" class="item">
+                }
+            </div>
+            <div id="thum" class="owl-carousel owl-theme mt-1">
+                @for (int i = 0; i < Model.photos.Count; i++)
+                {
+
+                    string id = "pro" + i;
+                    <a href="#@id">
+                        <img src="/Images/PropertyOfferImages/@Model.photos[i].path" class="item">
+                    </a>
+                }
+
+            </div>
+
+            <!---//////////////////////-->
+            <div class="card">
+                <div class="card-header">
+                    تفاصيل العقار
+                </div>
+
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">نوع السياره:  @Model.carType       موديل:  @Model.carModel</li>
+                    <li class="list-group-item">السعر:   @Model.price @Model.currencyName    </li>
+                </ul>
+            </div>
+
+            <div class="card mt-5">
+                <div class="card-header">
+                    الوصف
+                </div>
+                <div class="card-body">
+
+
+                    <p class="card-text">@Model.description</p>
+
+                </div>
+
+            </div>
+
+        </div>
+        <div class="col-md-4">
+            <!-- Search Widget -->
+            <div class="card">
+                <h5 class="card-header text-right">تواصل معنا لمعرفة المزيد</h5>
+                <div class="card-body">
+                    @Html.Action("ContactUs", new { selectedRole = Model })
+                </div>
+            </div>
+            <br>
+            @Html.Action("ServiceList", new { selectedRole = Model })
+
+
+
+
+            <br>
+        </div>
+    </div>
+    <!-- /.row -->
+</div>
+
+
+
+

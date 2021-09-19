@@ -1,0 +1,103 @@
+﻿@model IEnumerable<FullyProject.Models.SubscriptionEmail>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_DashLayout.cshtml";
+}
+
+
+<div class="app-content content container-fluid">
+    <div class="content-wrapper">
+        <div class="content-header row">
+            <div class="content-header-left col-md-6 col-xs-12 mb-1">
+                <h2 class="content-header-title">العقارات</h2>
+            </div>
+            <div class="content-header-right breadcrumbs-right breadcrumbs-top col-md-6 col-xs-12">
+                <div class="breadcrumb-wrapper col-xs-12">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="index.php">الصفحة الرئيسية</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="#">القعارات</a>
+                        </li>
+                        <li class="breadcrumb-item active">
+                            <a href="#">عرض عقار</a>
+                        </li>
+                        <li class="breadcrumb-item active">
+                            @Html.ActionLink("Create New", "Create")
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="content-body">
+            <!-- Basic Tables start -->
+            <!-- Hoverable rows start -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">العقارات</h4>
+                            <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+                            <div class="heading-elements">
+                                <ul class="list-inline mb-0">
+                                    <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-body collapse in">
+                            <div class="table-responsive">
+                                <table class="table table-hover mb-0">
+                                    <thead>
+                                        <tr>
+                                            
+                                            <th>رقم المشترك</th>
+                                            <th>البريد الاكتروني</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+
+                                        @foreach (var item in Model)
+                                        {
+                                            string v;
+                                            <tr>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.Id)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.email)
+                                                </td>
+                                                <td>
+                                                  
+                                                    @if (item.active) { v = "فعال"; } else { v = "معطل"; }
+                                                   
+                                                   @v
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn mr-1 mb-1 btn-outline-primary btn-sm"><i class="ficon icon-eye-disabled"></i>@Html.ActionLink("X", "UnActive", new { id = item.Id })</button>
+                                                    <button type="button" class="btn mr-1 mb-1 btn btn-outline-warning btn-sm"><i class="ficon icon-edit2"></i>@Html.ActionLink("حذف", "Delete", new { id = item.Id })</button>
+
+                                                   
+                                                </td>
+                                            </tr>
+                                        }
+                                       
+
+
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Hoverable rows end -->
+        </div>
+    </div>
+</div>
+<!-- ////////////////////////////////////////////////////////////////////////////-->

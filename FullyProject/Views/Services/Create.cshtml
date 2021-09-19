@@ -1,0 +1,141 @@
+﻿@model FullyProject.Models.Service
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_DashLayout.cshtml";
+}
+
+
+
+<div class="app-content content container-fluid">
+
+    <div class="content-wrapper">
+        <div class="content-header row">
+            <div class="content-header-left col-md-6 col-xs-12 mb-1">
+                <h2 class="content-header-title">خدمات</h2>
+            </div>
+            <div class="content-header-right breadcrumbs-right breadcrumbs-top col-md-6 col-xs-12">
+                <div class="breadcrumb-wrapper col-xs-12">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="~/Dashboard/Index">الصفحة الرئيسية</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="~/Services/Index">خدمات</a>
+                        </li>
+                        <li class="breadcrumb-item active">
+                            <a href="~/Services/Create">أضافة خدمه</a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="content-body">
+            <!-- Basic form layout section start -->
+            <section id="basic-form-layouts">
+                <div class="row match-height">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title" id="basic-layout-form">اضافة خدمة</h4>
+                                <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+                                <div class="heading-elements">
+                                    <ul class="list-inline mb-0">
+                                        <li><a data-action="collapse"><i class="icon-minus4"></i></a></li>
+                                        <li><a data-action="reload"><i class="icon-reload"></i></a></li>
+                                        <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                            <script>
+                                function Reset()
+                                {
+                                    document.getElementById("nameofserv").value =
+                                    document.getElementById("Descrption").value = '';
+                                }
+                            </script>
+                            <div class="card-body collapse in">
+                                <div class="card-block">
+
+
+                                   
+@using (Html.BeginForm("Create", "Services", FormMethod.Post, new { enctype = "multipart/form-data" }))
+
+{
+                                        @Html.AntiForgeryToken()
+    <div class="form-body">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        @Html.LabelFor(model => model.name, htmlAttributes: new { @class = "control-label " })
+
+                                                        @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control", id = "nameofserv"  ,placeholder="مسمئ الخدمة", name="fname" } })
+                                                        @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
+
+
+                                                       
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <h4 class="form-section">الصورة الاولئ</h4>
+                                                    <div class="form-group">
+                                                        <label>اختيار الصورة</label>
+                                                        <label id="projectinput7" class="file center-block">
+                                                            <input type="file" id="file" name="image1">
+                                                            <span class="file-custom"></span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <h4 class="form-section">@Html.LabelFor(model => model.description, htmlAttributes: new { @class = "control-label " })</h4>
+                                                    <div class="form-group">
+                                                      
+                                                        @Html.TextAreaFor(model => model.description, new { htmlAttributes = new { @class = "form-control" , id = "Descrption", rows = "5", name="comment", placeholder="وصف"}
+                                                        })
+                                                        @Html.ValidationMessageFor(model => model.description, "", new { @class = "text-danger" })
+
+
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-actions">
+                                                <button onclick="Reset()" type="button" class="btn btn-warning  float-lg-right">
+                                                    <i class="icon-cross2"></i> الغاء
+                                                </button>
+                                                <button type="submit" class="btn btn-primary mr-1 float-lg-right">
+                                                    <i class="icon-check2"></i> حفظ
+                                                </button>
+                                            </div>
+                                
+                                </div>
+                                    }
+                                 </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- // Basic form layout section end -->
+        </div>
+    </div>
+</div>
+<!------------------>
+
+
+
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

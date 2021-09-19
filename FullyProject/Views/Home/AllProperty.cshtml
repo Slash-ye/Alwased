@@ -1,0 +1,70 @@
+﻿@model FullyProject.ModelView.AllPropertyModelView
+@{
+    ViewBag.Title = "AllProperty";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<style>
+    .propertyImg {
+        width: 100%;
+        height: 183px;
+        object-fit: cover;
+    }
+</style>
+<!-- Page Content -->
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-8">
+            @foreach (var p in Model.PropertyOffers)
+            { 
+            <div class="card mb-4">
+                <div class="card-body text-right">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            
+                                <img class="img-fluid rounded propertyImg" src="/Images/PropertyOfferImages/@p.mainImage" alt=""/>
+                         
+                        </div>
+                        <div class="col-lg-6">
+                            <h2 class="card-title">@p.offerTitle</h2>
+                            <p class="card-text">@p.description</p>
+                            <p class="card-text">@p.price</p>
+                            <p class="card-text">
+                                <button class="btn btn-primary text-right mr-5">اتصل الان</button>
+                                <button class="btn btn-danger mr-3">البريد الاكتروني</button>
+                            </p>
+                        </div>
+                    </div>
+                    <br>
+                    <a href="~/Home/PropertyDetails/@p.Id" class="btn btn-light btn-block">التفاصبل</a>
+                </div>
+            </div>
+            }
+        </div>
+
+
+        <div class="col-md-4">
+            <!-- Search Widget -->
+            <div class="card">
+                <h5 class="card-header text-right">تواصل معنا لمعرفة المزيد</h5>
+                <div class="card-body">
+
+                    @Html.Action("ContactUs", new { selectedRole = Model })
+                </div>
+            </div>
+            <br>
+            @Html.Action("ServiceList", new { selectedRole = Model })
+
+
+
+
+
+
+        </div>
+
+    </div>
+    <!-- /.row -->
+
+</div>
+<!-- /.container -->

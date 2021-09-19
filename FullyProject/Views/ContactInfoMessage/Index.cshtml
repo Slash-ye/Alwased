@@ -1,0 +1,465 @@
+﻿@model IEnumerable<FullyProject.Models.ContactInfoMessage>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_DashNoSideBarLayout.cshtml";
+}
+
+<div data-scroll-to-active="true" class="main-menu menu-fixed menu-dark menu-accordion menu-shadow">
+
+    <!-- main menu header-->
+    <div class="main-menu-header">
+        <input type="hidden" />
+    </div>
+    <!-- / main menu header-->
+    <!-- main menu content-->
+    <div class="main-menu-content">
+
+        <ul id="main-menu-navigation" data-menu="menu-navigation" class="navigation navigation-main">
+
+            <li class=" nav-item">
+                <a href="~/Dashboard">
+                    <i class="icon-home3"></i>
+                    <span data-i18n="nav.dash.main" class="menu-title">لوحه التحكم</span>
+                </a>
+            </li>
+
+            <li class=" navigation-header">
+                <span data-i18n="nav.category.support">العقارات</span>
+                <i data-toggle="tooltip" data-placement="left" data-original-title="العقارات"
+                   class="icon-ellipsis icon-ellipsis"></i>
+            </li>
+            <li class=" nav-item">
+
+                <a href="~/PropertyOffers/Create">
+                    <i class="icon-file-add"></i>
+                    <span data-i18n="nav.menu_levels.main" class="menu-title">اضافة عقار</span>
+
+                </a>
+            </li>
+            <li class=" nav-item">
+                <a href="~/PropertyOffers">
+                    <i class="icon-android-funnel"></i>
+                    <span data-i18n="nav.menu_levels.main" class="menu-title">عرض العقار</span>
+
+                </a>
+
+
+                <ul class="menu-content">
+                    <li>
+                        <a href="~/PropertyOffers/Index" data-i18n="nav.menu_levels.second_level" class="menu-item">الكل</a>
+                    </li>
+
+
+                </ul>
+
+
+            </li>
+
+            <li class=" navigation-header">
+                <span data-i18n="nav.category.support">مشاريع قيد العمل</span>
+                <i data-toggle="tooltip" data-placement="left" data-original-title="مشاريع قيد العمل"
+                   class="icon-ellipsis icon-ellipsis"></i>
+            </li>
+            <li class=" nav-item">
+                <a href="~/OnlineProjects/Create">
+                    <i class="icon-file-add"></i>
+                    <span data-i18n="nav.dash.main" class="menu-title">أَضافه مشروع</span>
+                </a>
+
+            </li>
+            <li class=" nav-item">
+                <a href="~/OnlineProjects/">
+                    <i class="icon-android-funnel"></i>
+                    <span data-i18n="nav.menu_levels.main" class="menu-title">عرض المشاريع</span>
+                </a>
+            </li>
+
+
+            <!--
+            this for cars
+
+                done by F8 -->
+
+            <li class=" navigation-header">
+                <span data-i18n="nav.category.support">سيارات</span>
+                <i data-toggle="tooltip" data-placement="left" data-original-title="سيارات" class="icon-ellipsis icon-ellipsis"></i>
+            </li>
+            <li class=" nav-item">
+                <a href="~/CarOffers/Create">
+                    <i class="icon-file-add"></i>
+                    <span data-i18n="nav.dash.main" class="menu-title">أَضافه سياره</span>
+                </a>
+
+            </li>
+
+            <li class=" nav-item">
+                <a href="~/CarOffers/">
+                    <i class="icon-car"></i>
+                    <span data-i18n="nav.dash.main" class="menu-title">عرض السيارات</span>
+                </a>
+            </li>
+
+            <!--
+               the user share in website
+              done by F8
+               -->
+            <br />
+            <br />
+            <li class=" nav-item">
+                <a href="~/ContactInfoMessage">
+                    <i class="icon-android-funnel"></i>
+                    <span data-i18n="nav.menu_levels.main" class="menu-title">اضافة خيارات</span>
+
+                </a>
+                <ul class="menu-content">
+                    <li>
+                        <a href="~/PropertyTypes/" data-i18n="nav.menu_levels.second_level" class="menu-item">اضافة نوع عقار</a>
+                        <a href="~/PropertyStates/" data-i18n="nav.menu_levels.second_level" class="menu-item">اضافة حالة عقار</a>
+                        <a href="~/CurrencyTypes/" data-i18n="nav.menu_levels.second_level" class="menu-item">اضافة  عمله</a>
+                        <a href="~/DistanceUnits/" data-i18n="nav.menu_levels.second_level" class="menu-item">اضافة وحدة مساحه</a>
+
+
+                    </li>
+
+                </ul>
+            </li>
+
+            <li class=" navigation-header">
+                <span data-i18n="nav.category.support">الخدمات</span>
+                <i data-toggle="tooltip" data-placement="left" data-original-title="مشاريع قيد العمل"
+                   class="icon-ellipsis icon-ellipsis"></i>
+            </li>
+            <li class=" nav-item">
+                <a href="~/Services/Create">
+                    <i class="icon-file-add"></i>
+                    <span data-i18n="nav.dash.main" class="menu-title">أَضافه خدمه</span>
+                </a>
+
+            </li>
+            <li class=" nav-item">
+                <a href="~/Services/">
+                    <i class="icon-android-funnel"></i>
+                    <span data-i18n="nav.menu_levels.main" class="menu-title">عرض الخدمات</span>
+                </a>
+            </li>
+
+            <li class=" navigation-header">
+                <span data-i18n="nav.category.support"></span>
+                <i data-toggle="tooltip" data-placement="left" data-original-title="" class="icon-ellipsis icon-ellipsis"></i>
+            </li>
+
+            <li class=" nav-item">
+                <a href="~/SubscriptionEmail">
+                    <i class="icon-newspaper"></i>
+                    <span data-i18n="nav.dash.main" class="menu-title">قائمه المشاركين في الاخيار</span>
+                </a>
+            </li>
+
+            <li class=" navigation-header">
+                <span data-i18n="nav.category.support"></span>
+                <i data-toggle="tooltip" data-placement="left" data-original-title=""
+                   class="icon-ellipsis icon-ellipsis"></i>
+            </li>
+
+
+
+            <li class=" nav-item">
+                <a href="~/ContactInfoMessage">
+                    <i class="icon-android-funnel"></i>
+                    <span data-i18n="nav.menu_levels.main" class="menu-title">الرسائل</span>
+                    <span class="tag tag tag-primary tag-pill float-xs-right mr-2"> @ViewBag.massage</span>
+                </a>
+                <ul class="menu-content">
+                    <li class="menu-item">
+                      
+                        <a href="~/ContactInfoMessage/Index" data-i18n="nav.menu_levels.second_level" class="menu-item">الوارد</a>
+                       
+                    </li>
+                    <li class = "menu-item">
+                        
+                        <a href="~/ContactInfoMessage/Index?isRead=true" data-i18n="nav.menu_levels.second_level" class="menu-item">مقروئ</a>
+
+                        
+                    </li>
+                   
+                </ul>
+            </li>
+
+
+            <!--
+             setting the web site
+             done by F8
+            -->
+
+            <li class=" navigation-header">
+                <span data-i18n="nav.category.support">اعدادات الموقع</span><i data-toggle="tooltip" data-placement="right" data-original-title="Support" class="icon-ellipsis icon-ellipsis"></i>
+            </li>
+
+            <li class=" nav-item">
+                <a href="#">
+                    <i class="icon-android-funnel"></i>
+                    <span data-i18n="nav.menu_levels.main" class="menu-title">المسخدم</span>
+                </a>
+                <ul class="menu-content">
+                    <li>
+                        <a href="~/Account/Register" data-i18n="nav.menu_levels.second_level" class="menu-item">اضافه</a>
+                    </li>
+                    <li>
+                        <a href="~/Account/ShowUser" data-i18n="nav.menu_levels.second_level" class="menu-item">عرض</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <!-- /main menu content-->
+    <!-- main menu footer-->
+    <!-- include includes/menu-footer-->
+    <!-- main menu footer-->
+</div>
+
+
+
+
+
+<div class="app-content content container-fluid">
+
+    <div class="content-wrapper">
+        <div class="content-header row">
+            <div class="content-header-left col-md-6 col-xs-12 mb-1">
+                <h2 class="content-header-title">الرسائل</h2>
+            </div>
+            <div class="content-header-right breadcrumbs-right breadcrumbs-top col-md-6 col-xs-12">
+                <div class="breadcrumb-wrapper col-xs-12">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="~/Dashboard/Index">الصفحة الرئيسية</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="#">الرسائل</a>
+                        </li>
+                        <li class="breadcrumb-item active">
+                            <a href="~/ContactInfoMessage/Index">عرض الرسائل</a>
+                        </li>
+                        
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="content-body">
+            <!-- Basic Tables start -->
+            <!-- Hoverable rows start -->
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">الرسائل</h4>
+                            <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+                            <div class="heading-elements">
+                                <ul class="list-inline mb-0">
+                                    <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-body collapse in">
+                            <div class="table-responsive">
+
+
+                                <table class="table table-hover mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th>الاسم الكامل</th>
+                                            <th>الكود</th>
+                                            <th></th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                @Html.HiddenFor(modelItem=>item.Id ,new { id="mId"})
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.fullName)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.codeOfInterest)
+                                                </td>
+                                                <td>
+                                                    
+                                                     <button data-toggle="modal" data-target="#1" type="button" onclick="UpdateToRead()" class="btn btn-secondary">عرض الرساله</button>
+                                                   
+                                                    
+                                                          <button   type="button" class="btn btn-secondary">@Html.ActionLink("حذف", "Delete", new { id = item.Id })</button>
+                                                    
+                                                    
+                                                </td>
+
+</tr>
+                                            /*
+                                            <td>
+                            @Html.DisplayFor(modelItem => item.Property.offerTitle)
+                           
+                            @Html.DisplayFor(modelItem => item.fullName)
+                            
+                            @Html.DisplayFor(modelItem => item.message)
+                            
+                            @Html.DisplayFor(modelItem => item.email)
+                           
+                            @Html.DisplayFor(modelItem => item.phoneNumber)
+                            
+                            @Html.DisplayFor(modelItem => item.codeOfInterest)
+                            
+
+                            */
+                                        }
+                                        
+
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Modals -->
+                <div class="modal fade text-xs-left" id="1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel33" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <label class="modal-title text-text-bold-600" id="myModalLabel33">الرد</label>
+                            </div>
+                            <div class="modal-body">
+                                <div class="card" style="height:auto">
+                                    <div class="card-body">
+                                        <div class="card-block">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    الاسم الكامل
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <a data-toggle="modal" data-target="#code">
+                                                        الكود
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    رقم الهاتف
+                                                </div>
+                                                <div class="col-md-6">
+                                                    الايميل
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <p class="card-text">
+                                                ext texttext texttext texttext texttext texttext texttext texttext texttext texttext text
+                                                ttext texttext texttext texttext texttext texttext texttext texttext texttext texttext text
+                                            </p>
+                                            <hr>
+                                            <div class="form-actions center">
+                                                <button type="button" class="btn btn-outline-primary block btn-lg" data-toggle="modal" data-target="#inlineForm">
+                                                    الرد
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!--                 model for code -->
+                <div class="modal fade text-xs-left" id="code" tabindex="-1" role="dialog" aria-labelledby="myModalLabel33" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <label class="modal-title text-text-bold-600" id="myModalLabel33">Iالرد</label>
+                            </div>
+                            <div class="modal-body">
+                                <div class="card" style="height:auto">
+                                    <div class="card-body">
+                                        <div class="card-block">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    الاسم الكامل
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <a data-toggle="modal" data-target="#code">
+                                                        الكود
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    رقم الهاتف
+                                                </div>
+                                                <div class="col-md-6">
+                                                    الايميل
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <p class="card-text">
+                                                ext texttext texttext texttext texttext texttext texttext texttext texttext texttext text
+                                                ttext texttext texttext texttext texttext texttext texttext texttext texttext texttext text
+                                            </p>
+                                            <hr>
+                                            <div class="form-actions center">
+                                                <button type="button" class="btn btn-outline-primary block btn-lg" data-toggle="modal" data-target="#inlineForm">
+                                                    الرد
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--                model for Awnser -->
+                <div class="modal fade text-xs-left" id="inlineForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel33" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <label class="modal-title text-text-bold-600" id="myModalLabel33">Iالرد</label>
+                            </div>
+                            <form action="#">
+                                <div class="modal-body">
+                                    <label>الئ</label>
+                                    <div class="form-group ">
+                                        <input type="text" placeholder="الايميل" class="form-control round" disabled>
+                                    </div>
+                                    <label>الرسالة</label>
+                                    <div class="form-group">
+                                        <textarea rows="5" class="form-control round" name="complaintdetails" placeholder="الرسالة"></textarea>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <input type="submit" class="btn btn-outline-primary btn-lg" value="ارسال">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,202 @@
+﻿@model FullyProject.ModelView.IndexModelView
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+
+
+}
+<style>
+    .propertyImg {
+        width: 100%;
+        height: 270px;
+        object-fit: cover;
+    }
+</style>
+<!--============ Start Slider ============-->
+<div class="slider">
+    <div id="main-slider" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item item-one active"></div>
+            <div class="carousel-item item-two"></div>
+            <div class="carousel-item item-three"></div>
+            <div class="carousel-item item-four"></div>
+        </div>
+    </div>
+</div>
+<!--============ End Slider ============-->
+<!--  =====================  start search  ================-->
+<div class="topSearch">
+    <div class="container">
+          <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4 ">
+                        <button class="btn btn-block">محرك البحث</button>
+                    </div>
+                <div class="col-md-4 d-none"></div>
+         </div>
+      </div>
+ </div>
+  <div class="search">
+      <div class="container">
+          @using (Html.BeginForm("SeachEngine", "Home", FormMethod.Post))
+          {
+              <div class="row ">
+                  <div class="col-md-4">
+                      @Html.DropDownList("PropertyStateId", null, "نوع العرض", new { @class = "form-control", style = "height: 45px" })
+                  </div>
+                  <div class="col-md-4">
+                      @Html.DropDownList("City", null, "المدينة", new { @class = "form-control", style = "height: 45px " })
+                  </div>
+                  <div class="col-md-4">
+                      @Html.DropDownList("PropertyTypeId", null, "نوع العقار", new { @class = "form-control", style = "height: 45px" })
+                  </div>
+                
+              </div>
+                  <div class="row">
+                      <div class="col-md-4">
+                          @Html.DropDownList("Country", null, "الدولة", new { @class = "form-control", style = "height: 45px" })
+                      </div>
+                     
+                      <div class="col-md-4">
+                          @Html.TextBox("maxPrice", null, htmlAttributes: new { @class = "form-control", placeholder = "الحد الاعلئ للسعر", type = "number", style = "height: 45px; margin-top:18px" })
+                      </div>
+                      <div class="col-md-4">
+                          @Html.TextBox("minPrice", null, htmlAttributes: new { @class = "form-control", placeholder = "الحد الادني للسعر", type = "number", style = "height: 45px ; margin-top:18px" })
+                      </div>
+                  </div>
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4"><input type="submit" value="ابحث" class="btn btn-primary inputforms" /></div>
+                    <div class="col-md-4"></div>
+                </div>
+          }
+                      </div>
+                  </div>
+        <!--  =====================  end search  ================-->
+        <!--============ Start Latest Posts ============-->
+                  <div class="latest-posts text-center">
+                      <div class="container">
+                          <h2 class="h1 my-h2 mb-5">العقارات</h2>
+                          <p class="my-main-p"></p>
+                          <div class="row">
+
+                              @foreach (var p in Model.PropertyOffers)
+                              {
+                                  <div class="col-md-6 col-lg-4">
+                                      <div class="card text-left cardhover">
+                                          <img class="card-img-top propertyImg" src="/Images/PropertyOfferImages/@p.mainImage" alt="post1" />
+                                          <div class="card-body text-center">
+
+                                              <div class="ribbons-text new">New</div>
+                                              @if (p.price != null)
+                                              {<div class="ribbons-text price">@p.price </div>}
+                                              <h4 class="card-title">@p.offerTitle</h4>
+                                              <h6 class="card-subtitle mb-2 text-muted">@p.city</h6>
+                                              <!--
+                                            <p class="card-text">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                            </p>
+                                                -->
+                                              <p>
+                                                  <i class="fa fa-bath"></i>:@p.bathroomNumber <i class="fa fa-bed"></i>:@p.bathroomNumber <i class="fa fa-home"></i>:@p.distance
+                                              </p>
+                                          </div>
+                                      </div>
+                                  </div>
+
+                              }
+                          </div>
+
+                          <a class="btn btn-danger btnb" href="~/Home/AllProperty">More</a>
+
+
+                      </div>
+                  </div>
+        <!--============ End Latest Posts ============-->
+        <!--============ Start Latest Posts ============-->
+                  <div class="latest-posts text-center">
+                      <div class="container">
+                          <h2 class="h1 my-h2 mb-5">السيارات</h2>
+                          <p class="my-main-p"></p>
+                          <div class="row">
+                              @foreach (var c in Model.CarOffers)
+                              {
+                                  <div class="col-md-6 col-lg-4">
+                                      <div class="card text-left cardhover">
+                                          <img class="card-img-top propertyImg" src="/Images/CarOfferImages/@c.mainImage" alt="post1" />
+                                          <div class="card-body text-center">
+                                              <div class="ribbons-text new">New</div>
+                                              @if (c.price != null)
+                                              {<div class="ribbons-text price">@c.price  </div>}
+                                              <h4 class="card-title">@c.offerTitle</h4>
+                                              <h6 class="card-subtitle mb-2 text-muted">@c.carType</h6>
+                                              <h6 class="card-subtitle mb-2 text-muted">@c.carModel</h6>
+                                              <!--
+                                            <p class="card-text">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                            </p>
+                                                -->
+
+                                          </div>
+                                      </div>
+                                  </div>
+                              }
+                          </div>
+                          <a href="~/Home/AllCar" class="btn btn-danger btnb">More</a>
+
+                      </div>
+                  </div>
+        <!--============ End Latest Posts ============-->
+
+
+                  <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+                  <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+                  <div class="shere">
+                      <div class="container">
+                          <div class="row">
+                              <div class="col">
+
+                                  <h4 class="">للأشتراك في نشرة الاخبار</h4>
+                                  @using (Ajax.BeginForm("AddSubscriptionEmail", new AjaxOptions()
+                                  {
+                                      InsertionMode = InsertionMode.Replace,
+                                      UpdateTargetId = "dane"
+                                  }))
+                                  {
+                                      <div id="dane" class="text-center pb-3">
+                                          @Html.AntiForgeryToken()
+                                          <input type="email" class="form-control inputsub" placeholder="البريد الاكتروني" name="email">
+                                          @Html.ValidationMessage("email", "", new { @class = "text-danger" })
+                                          <input type="submit" class="btn btn-primary btnsub" value="اشتراك">
+                                      </div>
+                                  }
+                              </div>
+                          </div>
+                      </div>
+
+                  </div>
+
+        <!--============ Start features ============-->
+                  <div class="features text-center pt-2">
+                      <div class="container">
+                          <h2>خدماتنا</h2>
+                          <div class="row w-5">
+                              @foreach (var s in Model.Services)
+                              {
+                                  <div id="server" class="owl-carousel owl-theme  owl-rtl">
+                                      <div class="col-md-12">
+
+                                          <img src="/Images/ServiceImages/@s.image1" alt="Image" />
+                                          <h3>@s.name</h3>
+                                          <p>
+                                              @s.description
+                                          </p>
+                                      </div>
+                                  </div>
+                              }
+                          </div>
+                      </div>
+                  </div>
+        <!--============ End features ============-->

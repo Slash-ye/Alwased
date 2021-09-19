@@ -1,0 +1,708 @@
+/*@media (min-width: 576px) {*/
+/*@media (min-width: 768px) {*/
+/*@media (min-width: 992px) {*/
+/*@media (min-width: 1200px) {*/
+
+
+/*           #08526d         */
+
+/*==================== Start Upper Bar =====================*/
+.upper-bar {
+    background-color: #08526d;
+    color: #FFF;
+}
+
+.upper-bar .info {
+    margin: 15px 0;
+}
+@media (max-width: 576px) {
+    .upper-bar .info:first-child {
+        margin-bottom: 0;
+    }
+}
+/*==================== End Upper Bar =====================*/
+
+/*==================== Start Navbar =====================*/
+.navbar {
+    padding: .6rem 1rem;
+
+}
+
+.navbar-brand > span {
+    font-size: 35px;
+}
+
+.navbar-brand span:first-child {
+    color: #08526d;
+    font-weight: bold;
+}
+
+.navbar-brand span:last-child {
+    color: #ec1c23;
+}
+
+.navbar .navbar-brand img{
+    position: absolute;
+    top: -40px;
+    right: 170px;
+}
+
+
+.navbar-nav .nav-link {
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #08526d !important;
+    margin-left: 20px;
+    font-weight: 500;
+}
+.navbar-nav .active > .nav-link {
+    color: #ec1c23 !important;
+}
+ .navbar .container .collapse ul{
+     margin-right: 300px
+ }
+.navbar .container .collapse ul li a:hover{
+    text-underline: #1b1e21;
+    color: #ec1c23 !important;
+}
+
+
+@media (max-width: 992px) {
+    .navbar .navbar-brand img{
+        top: -45px;
+        margin-right: -72px;
+    }
+    .navbar .container .collapse ul{
+        margin-right: 0px;
+    }
+}
+
+/*==================== End Navbar =====================*/
+
+
+/*==================== Start Slider =====================*/
+
+.slider .carousel-inner {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+@media (max-width: 768px) {
+    .slider .carousel-inner {
+        justify-content: center;
+    }
+}
+
+.slider .carousel-inner h1 {
+    position: absolute;
+    color: #FFF;
+    line-height: 1.5;
+    font-size: 60px;
+    max-width: 800px;
+    margin-right: 110px;
+    z-index: 3;
+}
+
+@media (max-width: 768px) {
+    .slider .carousel-inner h1 {
+         font-size: 45px;
+         max-width: 90%;
+         margin-left: auto;
+         margin-right: auto;
+         text-align: center;
+    }
+}
+
+@media (max-width: 992px) {
+    .slider .carousel-inner h1 {
+         font-size: 55px;
+         max-width: 90%;
+         margin-left: auto;
+         margin-right: auto;
+         text-align: center;
+    }
+}
+
+.slider .carousel-inner h1 span {
+    color: #ec1c23;
+}
+
+.slider .carousel-inner .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 2;
+}
+
+.slider .carousel-item {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.slider .item-one {
+    background-image: url('../../images/slider_1.jpg')
+}
+
+.slider .item-two {
+    background-image: url('../../images/slider_2.jpeg')
+}
+
+.slider .item-three {
+    background-image: url('../../images/slider_3.jpg')
+}
+
+.slider .item-four {
+    background-image: url('../../images/slider_4.jpg')
+}
+
+.carousel-indicators li {
+    height: 6px;
+    background-color: #127aa0;
+    cursor: pointer;
+}
+
+.carousel-indicators li.active {
+    background-color: #ec1c23;
+}
+
+/*==================== End Slider =====================*/
+
+
+
+/*<!--  =====================  start search  ================-->*/
+
+  .search{
+      padding: 10px;
+      position: relative;
+      border-top: 5px solid #08526d;
+      background-color:#08526d;
+  }
+   .search button{
+       position: absolute;
+       background-color: #08526d;
+       color: #fff;
+       left: 423px;
+       width: 500px;
+       bottom: 210px;
+       font-size: 30px;
+       border-radius: 50px 50px 0 0;
+       border: 0;
+  }
+
+.search .inputforms{
+    border: 2px solid #ec1c23;
+    background-color: #08526d;
+    width: 250px;
+    margin: 11px 422px 0 0;
+    border-radius: 18px 18px 18px 18px;
+}
+
+.search .inputforms:hover{
+    background-color: #ec1c23;
+    width: 250px;
+    border-radius: 25px 25px 25px 25px;
+}
+.search select{
+   
+    margin-top: 20px;
+    margin-bottom: 10px;
+    height: 42px;
+}
+
+/*here for smaill screen */
+@media (max-width: 990px) {
+    .search .inputforms{
+        background-color: #08526d;
+        width: 189px;
+        margin: 10px 80px 0 0;
+        border-radius: 18px 18px 18px 18px
+    }
+    .search .inputforms:hover{
+        background-color: #ec1c23;
+        width: 189px;
+    }
+
+    .search button{
+        position: absolute;
+        background-color: #08526d;
+        color: #fff;
+        left: 85px;
+        width: 239px;
+        bottom: 487px;
+        font-size: 19px;
+        border-radius: 50px 50px 0px 0px;
+        border: 0px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .search .inputforms{
+        margin: 10px 55px 0px 0px;
+    }
+    .search button{
+        left: 65px;
+    }
+}
+
+
+
+/*<!--  =====================  end search  ================-->*/
+
+/*==================== End Features =====================*/
+
+.features {
+    padding: 70px 0;
+    background-color: #eeeeee;
+}
+.features h2 {
+    color: #08526d;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+.features i {
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    background-color: #ec1c23;
+    color: #FFF;
+    margin-bottom: 18px;
+}
+
+.features h3 {
+    color: #08526d;
+    font-size: 23px;
+}
+    .features img {
+        width: 243px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+.features p {
+    color: #acb5b8;
+    font-size: 16px;
+    margin-bottom: 40px;
+}
+
+
+@media (max-width: 990px) {
+    .showing-image .container ul li {
+        margin-left: 60px;
+    }
+
+    .showing-image  .imgs {
+        margin: 5px;
+    }
+ }
+
+/*==================== End Features =====================*/
+
+/*==================== Start showing-image =====================*/
+
+.showing-image {
+    padding: 70px 0 0;
+}
+
+.showing-image ul {
+    margin-top: 40px;
+}
+
+.showing-image ul li {
+    border: 1px solid #08526d;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0 2px;
+    margin-bottom: 12px;
+    color: #08526d;
+    -webkit-transition: all .2s ease-in;
+    -moz-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+
+}
+
+.showing-image ul li.active,
+.showing-image ul li:hover {
+    border-color: #ec1c23;
+    background-color: #ec1c23;
+    color: #FFF;
+}
+
+.showing-image .imgs {
+    margin-top: 40px;
+}
+
+.showing-image .imgs .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.showing-image .imgs .row > div {
+    padding: 0;
+    -webkit-transition: all .3s ease-in;
+    -moz-transition: all .3s ease-in;
+    -o-transition: all .3s ease-in;
+    transition: all .3s ease-in;
+}
+
+.showing-image .imgs .row img {
+    width: 100%;
+}
+
+/*==================== End showing-image =====================*/
+
+/*=================== Start shere ====================*/
+
+.shere{
+    background-color: #fff;
+    margin: 60px;
+}
+.shere h4{
+color: #08526d;
+font-size: 40px;
+text-align: center;
+margin-bottom: 25px;
+}
+
+.inputsub
+{
+    width:700px;
+    border-radius: 0px 18px 18px 0px;
+    margin-right: 90px;
+}
+
+
+.btnsub{
+    position: absolute;
+    width: 200px;
+    left: 136px;
+    top: 69px;
+    border-radius: 18px 0 0 18px
+}
+
+
+@media (max-width: 990px) {
+    .inputsub
+    {
+        width: 300px;
+        margin: 0;
+        border-radius: 0 18px 18px 0;
+        margin-right: -50px;
+    }
+    .btnsub{
+        position: absolute;
+        width: 100px;
+        left: -42px;
+        top: 112px;
+        border-radius: 18px 0 0 18px;
+    }
+}
+
+/*=================== Start shere ====================*/
+
+
+/*=================== Start Latest Posts ====================*/
+
+.latest-posts {
+    padding: 20px  0;
+    background-color: #EEE;
+}
+
+.latest-posts img {
+    width: 100%;
+}
+
+.latest-posts .card {
+    margin-bottom: 30px;
+}
+
+.latest-posts .card-body {
+    padding: 12px !important;
+}
+
+.latest-posts .card-title {
+    font-size: 22px;
+    color: #08526d;
+    margin-top: 0;
+    line-height: 1.5;
+}
+
+.latest-posts .card-subtitle {
+    font-size: 14px;
+    color: #aab2b9 !important;
+}
+
+.latest-posts .card-text {
+    color: #7e858b;
+}
+
+.latest-posts .card-link {
+    color: #ec1c23;
+}
+
+.latest-posts .container .row  .card .card-body .new {
+    transform: rotate(360deg);
+    position: absolute;
+    padding: 5px;
+    background-color: #ec1c23;
+    /*color: #08526d;*/
+    border-radius: 10px;
+    top: 11px;
+    right: 23px;
+    color: #fff;
+}
+
+.latest-posts .container .row  .card .card-body .price {
+    transform: rotate(360deg);
+    position: absolute;
+    padding: 4px;
+    background-color: #08526d;
+    border-radius: 0 28px;
+    top: 186px;
+    left: 14px;
+    width: 100px;
+    color: #fff3cd;
+}
+
+.latest-posts .container .row  .card .card-body p i {
+    margin:  11px 26px 0 2px;
+    font-size: 23px;
+
+}
+
+.latest-posts .container .row  .card:hover{
+    transition: transform 0.9s ease;
+}
+
+.latest-posts .cardhover:hover{
+    box-shadow: 0px 9px 20px rgba(8,81,109,0.5);
+}
+
+
+.latest-posts .container .row .btna {
+    text-decoration: none;
+    pointer-events: none;
+    color: #fff;
+    font-size: 19px;
+    text-align: center;
+}
+.latest-posts .container .btnb{
+    margin: 10px auto;
+    width: 200px;
+    border-radius: 10px;
+}
+
+.latest-posts .container .btnb:hover{
+    border-radius: 20px;
+    color: #000;
+    -webkit-transition: all 400ms ease;
+    -moz-transition: all 400ms ease;
+    -ms-transition: all 400ms ease;
+    -o-transition: all 400ms ease;
+    transition: all 400ms ease;
+}
+
+
+
+/*=================== End Latest Posts ====================*/
+
+
+
+/*=================== Start Footer ====================*/
+
+footer {
+    padding: 40px 0 0;
+}
+
+footer .site-info h2 {
+    font-size: 50px;
+    margin-bottom: 35px;
+}
+
+footer .site-info h2 span:first-child {
+    font-weight: bold;
+    color: #08526d;
+}
+
+footer .site-info h2 span:last-child {
+    color: #ec1c23;
+}
+
+
+footer .site-info ul li {
+    margin-bottom: 5px;
+}
+
+footer .site-info a {
+    color: #08526d;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+footer h3 {
+    color: #08526d;
+    margin-bottom: 20px;
+    font-size: 26px;
+}
+
+footer .contact {
+    color: #868e96;
+}
+
+footer .contact li {
+    margin-bottom: 5px;
+}
+ .copyright {
+    margin-top: 5px;
+    padding: 20px 0 20px;
+    border-top: 2px solid #a7aeb0;
+    color: #868e96;
+}
+
+
+   /*here for smaill screen */
+@media (max-width: 992px) {
+    footer {
+        padding: 10px 0 0;
+    }
+    footer .row  {
+       text-align: center;
+    }
+    footer h3 {
+        margin: 30px 0;
+    }
+}
+
+/*here for smaill screen */
+@media (max-width: 1000px) {
+    footer .row  {
+        text-align: center;
+    }
+    footer .help-links  {
+        margin-left: 10px;
+    }
+
+    footer .help-links .inputsub {
+        border-radius: 0 18px 18px 0;
+        width: 200px;
+    }
+
+    footer h3 {
+        margin: 30px auto;
+    }
+}
+
+/*=================== End Footer ====================*/
+
+
+/*=================== start about us  ====================*/
+.aboutus .home.parallax-window{
+    min-height: 300px;
+}
+
+.aboutus .aboutuscover{
+    background: url("../../images/elements.jpg")center fixed no-repeat ;
+    position: relative;
+    background-size: cover;
+    height: 400px;
+    margin-bottom: 20px;
+}
+.aboutus .aboutuscover h1{
+    position: absolute;
+    right: 200px;
+    top: 150px;
+    color: #fff;
+    font-size: 80px;
+}
+.sho{
+    display: none;
+}
+
+@media (max-width: 1990px) {
+
+    .aboutus div {
+        margin-bottom:5px;
+    }
+    .aboutus h4 ,
+    .aboutus p{
+        margin-top: 15px;
+    }
+}
+@media (max-width: 1000px) {
+    .aboutus .aboutuscover h1{
+        position: absolute;
+        color: #fff;
+        right: 40px;
+        top: 150px;
+        font-size:50px;
+    }
+    .sho{
+        display: block;
+    }
+    .hed{
+        display: none;
+    }
+    .aboutus h4 ,
+    .aboutus p{
+        margin-top: 15px;
+    }
+}
+/*=================== end  about us  ====================*/
+
+/*=================== start  contant  ====================*/
+
+.contactInfo li{
+    margin: 15px 0;
+}
+.contactMedia li{
+    display: inline;
+    font-size: 30px;
+    margin: 0px 9px;
+}
+.contactUSBanner{
+    background: url("../../images/card-img-3.jpg")center fixed no-repeat ;
+    background-size: cover;
+}
+.contactUSBanner .row{
+    height: 300px;
+    color: #FFFFFF;
+}
+.cont{
+    padding: 20px 0;
+    background:#f5f5f5;
+}
+.contt{
+    box-shadow: -1px 6px 13px -5px #0006;
+}
+.cont .continner{
+    background: #FFFFFF;
+    padding: 60px
+}
+.cont .contimg{
+    background: url('../../images/slack.png');
+    padding: 60px
+}
+
+
+/*here for smaill screen */
+@media (max-width: 1000px) {
+
+    .cont{
+        padding: 0px ;
+        background:#f5f5f5;
+    }
+    .contactUSBanner h1 ,
+    .contactUSBanner  p{
+        margin-right: 10px ;
+    }
+}
+
+/*=================== end   contant  ====================*/

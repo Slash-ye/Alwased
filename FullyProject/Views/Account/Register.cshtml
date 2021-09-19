@@ -1,0 +1,221 @@
+﻿@model FullyProject.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_DashLayout.cshtml";
+}
+
+
+
+
+
+
+<!--/////////////////////-->
+
+<div class="app-content content container-fluid">
+    <div class="content-wrapper">
+        <div class="content-header row">
+            <div class="content-header-left col-md-6 col-xs-12 mb-1">
+                <h2 class="content-header-title">المستخدمين </h2>
+            </div>
+            <div class="content-header-right breadcrumbs-right breadcrumbs-top col-md-6 col-xs-12">
+                <div class="breadcrumb-wrapper col-xs-12">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="Dashboard/index">الصفحة الرئيسية</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="">المستخدمين</a>
+                        </li>
+                        <li class="breadcrumb-item active">
+                            <a href="">اضافة المستخدم</a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="content-body">
+            <!-- Basic form layout section start -->
+            <section id="basic-form-layouts">
+                <div class="row match-height">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title" id="basic-layout-form">اضافة مستخدم</h4>
+                                <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+                                <div class="heading-elements">
+                                    <ul class="list-inline mb-0">
+                                        <li><a data-action="collapse"><i class="icon-minus4"></i></a></li>
+                                        <li><a data-action="reload"><i class="icon-reload"></i></a></li>
+                                        <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body collapse in">
+    <div class="card-block">
+
+
+        @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                                    {
+            @Html.AntiForgeryToken()
+
+        @Html.ValidationSummary("", new { @class = "text-danger" })
+           
+            <div class="form-body">
+                <h4 class="form-section">معلومات عامة</h4>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+
+                            @Html.LabelFor(m => m.FullName, new { @class = " control-label" })
+
+                            @Html.TextBoxFor(m => m.FullName, new { @class = "form-control", id = "fullname", placeholder = "الاسم الكامل", name = "fname" })
+                            @Html.ValidationMessageFor(m => m.FullName, "", new { @class = "text-danger" })
+
+
+
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+
+                            @Html.LabelFor(m => m.JobName, new { @class = " control-label" })
+
+                            @Html.TextBoxFor(m => m.JobName, new { @class = "form-control", id = "work", placeholder = "العمل", name = "fname" })
+                            @Html.ValidationMessageFor(m => m.JobName, "", new { @class = "text-danger" })
+
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+
+                            @Html.LabelFor(m => m.PhoneNumber, new { @class = " control-label" })
+
+                            @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control", id = "phonenumber", placeholder = "رقم الهانف", name = "fname" })
+                            @Html.ValidationMessageFor(m => m.PhoneNumber, "", new { @class = "text-danger" })
+
+
+
+
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+
+                            @Html.LabelFor(m => m.Email, new { @class = " control-label" })
+
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", id = "email", placeholder = "اسم المستخدم", name = "fname" })
+                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="form-section">معلومات الحساب</h4>
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.UserName, new { @class = " control-label" })
+
+                            @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", id = "username", placeholder = "اسم المستخدم", name = "fname" })
+                            @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
+
+
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.Password, new { @class = " control-label" })
+
+                            @Html.PasswordFor(m => m.Password, new { @class = "form-control", id = "pass",placeholder="كلمة السر" })
+                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+
+
+                        </div>
+                    </div>
+                </div>
+                                   
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                           <label class="control-label">الصلاحيات</label>
+                            @Html.DropDownList("RoleId", null, "أختر الصلاحيه", htmlAttributes: new { @class = "form-control", id = "typeofAqq", name = "interested" })
+
+
+
+                           
+                        </div>
+
+                    </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                @Html.LabelFor(m => m.ConfirmPassword, new { @class = " control-label" })
+                                                                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", id = "pass", placeholder = "تاكيد كلمه السر", name = "fname" })
+                                                                @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-actions">
+                                                        <button onclick="Reset()" type="button" class="btn btn-warning  float-lg-right">
+                                                            <i class="icon-cross2"></i> الغاء
+                                                        </button>
+
+
+                                                        <button type="submit" class="btn btn-primary mr-1 float-lg-right">
+                                                            <i class="icon-check2"></i> حفظ
+                                                        </button>
+
+
+                                                    </div>
+                                                </div>
+        }
+                               
+
+                                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <script>
+                 function Reset()
+                 {
+                     document.getElementById("fullname").value =
+                     document.getElementById("work").value =
+                     document.getElementById("email").value  =
+                     document.getElementById("phonenumber").value =
+                     document.getElementById("username").value =
+                     document.getElementById("pass").value = "";
+                 }
+            </script>
+            <!-- // Basic form layout section end -->
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
